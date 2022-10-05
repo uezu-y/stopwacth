@@ -40,7 +40,7 @@ function reset(){
 
     elapsedTime = 0;
     stopTime = 0;
-    dispTime.textContent = "0:0:0:0";
+    dispTime.textContent = "00:00:00.0";
 
     startBtn.disabled = false;
     stopBtn.disabled = true;
@@ -54,8 +54,7 @@ function measure() {
         
         // 経過時間を設定して、画面へ表示する
         elapsedTime = Date.now() - startTime + stopTime;
-        dispTime.textContent = new Date(elapsedTime).toISOString().replace(/[^0-9]/g, '').slice(11, 15)
-        .replace(/(\d{1})(\d{1})(\d{1})(\d{1})/, "$1:$2:$3:$4");
+        dispTime.textContent = new Date(elapsedTime).toISOString().slice(11, 21);
 
         measure();
     }, 10);
