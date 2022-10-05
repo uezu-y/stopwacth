@@ -28,7 +28,7 @@ function stop(){
 
     stopTime += Date.now() - startTime;
 
-    start.disabled = false;
+    startBtn.disabled = false;
     stopBtn.disabled = true;
     resetBtn.disabled = false;
 }
